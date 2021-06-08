@@ -1,0 +1,16 @@
+@import "./src/them/variables";
+
+.header {
+  nav {
+    background-color: $black;
+  }
+  .count {
+    margin-left: 10rem;
+    font-weight: bold;
+    color: $white;
+  }
+  .logo {
+    color: $green;
+    font-weight: bold;
+  }
+}
