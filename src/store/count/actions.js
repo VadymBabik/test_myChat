@@ -1,0 +1,1 @@
+export const COUNT_MASSAGE = "COUNT_MASSAGE";
