@@ -1,0 +1,42 @@
+@import "./src/them/variables";
+.message{
+  background-color: $grey;
+  border-radius: 8px;
+  display: flex;
+  //justify-content: space-between;
+  align-items: center;
+
+  .avatar{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    margin-right: 10px;
+    width: 70px;
+    height: 70px;
+  }
+  .content{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    .title{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .user{
+        font-weight: bold;
+        color: $green;
+        margin: 0;
+      }
+    }
+    .text{
+      margin: 0;
+    }
+    .favorite{
+      display: flex;
+      justify-content: flex-end;
+      color: $green;
+      &:hover{
+        cursor: pointer;
+      }
+    }
+  }
+}
