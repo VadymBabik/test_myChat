@@ -1,0 +1,10 @@
+@import "./src/them/variables";
+
+.footer {
+  padding-bottom: 0.1rem;
+  background-color: $black;
+  .link {
+    color: $white;
+    font-weight: bold;
+  }
+}
