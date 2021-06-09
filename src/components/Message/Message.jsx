@@ -14,19 +14,18 @@ const Message = ({ mesage, toggleFavorite }) => {
     (state) => state.message
   );
   const { id, avatar, created_at, message, user, isFavorite } = mesage;
-
-  const edetMassage = (event) => {
+  const editMassage = (event) => {
     if (event.key === "Enter") {
       dispatch(messageSend(messagesText));
       dispatch(chatUpdate());
     }
   };
-  const isAutor = JSON.parse(localStorage.getItem("User")) === user;
+  const isAuthor = JSON.parse(localStorage.getItem("User")) === user;
   return (
     <div className="row container">
       <div
-        className={`${s.message}  ${isAutor ? " act offset-l6 l6" : "l6"} ${
-          isAutor && s.autor
+        className={`${s.message}  ${isAuthor ? " act offset-l6 l6" : "l6"} ${
+          isAuthor && s.author
         } col`}
       >
         <img className={s.avatar} src={avatar} alt={user} />
@@ -35,7 +34,7 @@ const Message = ({ mesage, toggleFavorite }) => {
             <h5 className={s.user}>{user}</h5>
             <span className={s.data}>{created_at}</span>
           </div>
-          {isAutor && isEdit && messagesId === id ? (
+          {isAuthor && isEdit && messagesId === id ? (
             <div className={`${s.inputEdit} input-field`}>
               <input
                 className={s.inputText}
@@ -43,14 +42,14 @@ const Message = ({ mesage, toggleFavorite }) => {
                 onChange={(event) =>
                   dispatch(messageSetText(event.target.value))
                 }
-                onKeyPress={edetMassage}
+                onKeyPress={editMassage}
                 type="text"
               />
             </div>
           ) : (
             <p className={s.text}>{message}</p>
           )}
-          {!isAutor ? (
+          {!isAuthor ? (
             <div className={s.favorite} onClick={toggleFavorite}>
               {isFavorite ? (
                 <i className="material-icons">favorite</i>

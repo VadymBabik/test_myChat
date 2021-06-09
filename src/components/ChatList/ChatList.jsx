@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import s from "./ChatList.module.scss";
 import Preloader from "../Preloader/Preloader";
 import Title from "../Title/Title";
@@ -12,7 +12,13 @@ const ChatList = () => {
   const dispatch = useDispatch();
   const { isLoading, isError, messages } = useSelector((state) => state.chat);
 
+  const messagesEndRef = useRef(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
   useEffect(() => {
+    scrollToBottom();
     if (!localStorage.getItem("User")) {
       localStorage.setItem("User", JSON.stringify("Anonymous"));
     }
@@ -37,6 +43,7 @@ const ChatList = () => {
             />
           );
         })}
+      <div ref={messagesEndRef} />
     </div>
   );
 };

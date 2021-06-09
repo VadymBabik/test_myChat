@@ -16,7 +16,9 @@ const Header = () => {
             {countUser} users {countMessages} messages
           </span>
           <div className="right hide-on-med-and-down">
-            <span>Last message: {lastMessageData}</span>
+            <span className={s.lastMessage}>
+              Last message: {lastMessageData}
+            </span>
           </div>
         </div>
       </nav>

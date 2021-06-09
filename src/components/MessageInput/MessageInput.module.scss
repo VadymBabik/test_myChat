@@ -15,7 +15,7 @@
       border-radius: 8px;
       background-color: $white;
       .inputText {
-        border-bottom: inherit !important;
+        border-bottom: inherit !important; //Перебить стили materializecss))
         box-shadow: inherit !important;
       }
     }

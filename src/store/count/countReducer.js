@@ -9,9 +9,8 @@ const initialState = {
 const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.COUNT_MASSAGE:
-      const fff = getCount(state);
-      console.log("fff", fff);
-      return { ...state, ...fff };
+      const count = getCount(state);
+      return { ...state, ...count };
 
     default:
       return state;

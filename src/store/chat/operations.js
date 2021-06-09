@@ -18,6 +18,7 @@ export const toggleFavorite = (state, payload) => {
   setLocalStorage(updateChat);
   return updateChat;
 };
+
 export const deleteMessage = (state, payload) => {
   const updateChat = state.messages.filter((e) => e.id !== payload);
   setLocalStorage(updateChat);
