@@ -4,7 +4,7 @@
  [Pages](https://reactmychat.herokuapp.com/)
 
 
-> ### **Что можно быдл сделать лучше:**
+> ### **Что можно сделать лучше:**
 >> _написать back-End на Node.js | Express | MongoDB | socket.io_<br/>
 > 
 >> _сделать регистрацию и авторизацию с использованием JWT Token_ 
