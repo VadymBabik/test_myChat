@@ -1,5 +1,5 @@
 import * as types from "./actions";
-import { chatFetch, toggleFavorite } from "./operations";
+import { chatFetch, toggleFavorite, updateChat } from "./operations";
 
 const initialState = {
   isLoading: false,
@@ -24,6 +24,10 @@ const chatReducer = (state = initialState, action) => {
     case types.CHAT_TOGGLE_FAVORITE: {
       const setFavorite = toggleFavorite(state, action.payload);
       return { ...state, messages: setFavorite };
+    }
+    case types.CHAT_UPDATE: {
+      const update = updateChat();
+      return { ...state, messages: update };
     }
     default:
       return state;

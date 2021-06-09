@@ -8,6 +8,8 @@ export const chatFetch = (payload) => {
   setLocalStorage(updateChat);
   return updateChat;
 };
+export const updateChat = () =>
+  JSON.parse(localStorage.getItem("chatMessages"));
 
 export const toggleFavorite = (state, payload) => {
   const updateChat = state.messages.map((e) =>
