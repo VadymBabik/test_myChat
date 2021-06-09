@@ -1,5 +1,6 @@
 import * as types from "./actions";
-import { chatFetch, toggleFavorite, updateChat } from "./operations";
+import { chatFetch, deleteMessage, toggleFavorite } from "./operations";
+import { getLocalStorage } from "../operation";
 
 const initialState = {
   isLoading: false,
@@ -26,7 +27,11 @@ const chatReducer = (state = initialState, action) => {
       return { ...state, messages: setFavorite };
     }
     case types.CHAT_UPDATE: {
-      const update = updateChat();
+      const update = getLocalStorage();
+      return { ...state, messages: update };
+    }
+    case types.CHAT_DELETE_MESSAGE: {
+      const update = deleteMessage(state, action.payload);
       return { ...state, messages: update };
     }
     default:

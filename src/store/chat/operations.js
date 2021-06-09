@@ -1,5 +1,6 @@
 import axios from "axios";
 import { fetchChat, isError, isLoading } from "./actionCreators";
+import { setLocalStorage } from "../operation";
 
 export const chatFetch = (payload) => {
   const updateChat = payload.map((e) => {
@@ -8,13 +9,16 @@ export const chatFetch = (payload) => {
   setLocalStorage(updateChat);
   return updateChat;
 };
-export const updateChat = () =>
-  JSON.parse(localStorage.getItem("chatMessages"));
 
 export const toggleFavorite = (state, payload) => {
   const updateChat = state.messages.map((e) =>
     e.id === payload ? { ...e, isFavorite: !e.isFavorite } : e
   );
+  setLocalStorage(updateChat);
+  return updateChat;
+};
+export const deleteMessage = (state, payload) => {
+  const updateChat = state.messages.filter((e) => e.id !== payload);
   setLocalStorage(updateChat);
   return updateChat;
 };
@@ -32,6 +36,3 @@ export const loadingChat = () => {
     }
   };
 };
-
-const setLocalStorage = (item) =>
-  localStorage.setItem("chatMessages", JSON.stringify(item));

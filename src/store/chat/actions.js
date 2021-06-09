@@ -3,3 +3,4 @@ export const CHAT_FETCH = "CHAT_FETCH";
 export const CHAT_ERROR = "CHAT_ERROR";
 export const CHAT_UPDATE = "CHAT_UPDATE";
 export const CHAT_TOGGLE_FAVORITE = "CHAT_TOGGLE_FAVORITE";
+export const CHAT_DELETE_MESSAGE = "CHAT_DELETE_MESSAGE";

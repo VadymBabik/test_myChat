@@ -3,11 +3,12 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 import chatReducer from "./chat/chatReducer";
 import inputReducer from "./input/inputReducer";
+import messageReducer from "./message/messageReducer";
 
 const rootReducer = combineReducers({
   chat: chatReducer,
   input: inputReducer,
-  // cart: cartReducer,
+  message: messageReducer,
 });
 
 const store = createStore(

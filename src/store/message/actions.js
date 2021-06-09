@@ -1,0 +1,4 @@
+export const MESSAGE_EDIT = "MESSAGE_EDIT";
+export const MESSAGE_IS_EDIT = "MESSAGE_IS_EDIT";
+export const MESSAGE_SET_TEXT = "MESSAGE_SET_TEXT";
+export const MESSAGE_SEND = "MESSAGE_SEND";

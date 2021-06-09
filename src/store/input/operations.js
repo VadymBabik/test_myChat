@@ -1,12 +1,6 @@
 import uniqid from "uniqid";
 import { format } from "date-fns";
-const User = () => {
-  if (localStorage.getItem("User")) {
-    return JSON.parse(localStorage.getItem("User"));
-  }
-  localStorage.setItem("User", JSON.stringify("Anonymous"));
-  return "Anonymous";
-};
+import { getLocalStorage, setLocalStorage } from "../operation";
 
 const pattern = "yyyy-MM-dd HH:mm:ss";
 export const sendInput = (state) => {
@@ -16,11 +10,12 @@ export const sendInput = (state) => {
     created_at: format(new Date(), pattern),
     isFavorite: false,
     message: state.message,
-    user: User(),
+    user: JSON.parse(localStorage.getItem("User")),
   });
-  const chatMessages = JSON.parse(localStorage.getItem("chatMessages"));
+  const chatMessages = getLocalStorage();
   chatMessages.push(newMessage());
   setLocalStorage(chatMessages);
+
   return {
     id: "",
     avatar: "",
@@ -30,6 +25,3 @@ export const sendInput = (state) => {
     user: "",
   };
 };
-
-const setLocalStorage = (item) =>
-  localStorage.setItem("chatMessages", JSON.stringify(item));
