@@ -1,10 +1,18 @@
-export const countMessages = (store) => {
-  if (localStorage.getItem("chatMessages")) {
-    const message = JSON.parse(localStorage.getItem("chatMessages")).length;
-    const user = JSON.parse(localStorage.getItem("chatMessages")).filter(
-      (e) => e.user
-    );
-    return { ...store, countUser: user, countMessages: message };
-  }
-  return { ...store, countUser: 0, countMessages: 0 };
+import { getLocalStorage } from "../operation";
+import { format } from "date-fns";
+
+const pattern = "yyyy-MM/dd HH:mm:ss";
+format(new Date(), pattern);
+
+export const getCount = () => {
+  const data = getLocalStorage();
+  const countMessages = data.length;
+  const countUser = new Set(data.map((e) => e.user)).size;
+  const MessageData = [...new Set(data.map((e) => e.created_at))];
+  const arMessageData = MessageData.map((e) => Date.parse(e));
+  const maxMessageData = Math.max(...arMessageData);
+  const lastMessageData = format(new Date(maxMessageData), pattern);
+
+  console.log(lastMessageData);
+  return { countUser, countMessages, lastMessageData };
 };

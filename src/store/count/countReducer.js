@@ -1,18 +1,17 @@
 import * as types from "./actions";
-import { chatFetch, toggleFavorite } from "./operations";
-import { countMessages } from "./operation";
+import { getCount } from "./operation";
 
 const initialState = {
   countUser: 0,
   countMessages: 0,
-  lastMessage: "",
+  lastMessageData: "",
 };
 const countReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.COUNT_MASSAGE:
-      const fff = countMessages(state);
-      console.log(fff);
-      return { fff };
+      const fff = getCount(state);
+      console.log("fff", fff);
+      return { ...state, ...fff };
 
     default:
       return state;
