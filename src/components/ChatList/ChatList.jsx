@@ -12,6 +12,9 @@ const ChatList = () => {
   const { isLoading, isError, messages } = useSelector((state) => state.chat);
 
   useEffect(() => {
+    if (!localStorage.getItem("User")) {
+      localStorage.setItem("User", JSON.stringify("Anonymous"));
+    }
     if (messages.length) {
       return localStorage.setItem("chatMessages", JSON.stringify(messages));
     }
