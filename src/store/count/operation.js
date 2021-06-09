@@ -12,7 +12,5 @@ export const getCount = () => {
   const arMessageData = MessageData.map((e) => Date.parse(e));
   const maxMessageData = Math.max(...arMessageData);
   const lastMessageData = format(new Date(maxMessageData), pattern);
-
-  console.log(lastMessageData);
   return { countUser, countMessages, lastMessageData };
 };
