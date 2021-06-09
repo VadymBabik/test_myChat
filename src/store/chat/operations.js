@@ -31,6 +31,7 @@ export const loadingChat = () => {
       dispatch(isLoading());
       const response = await axios(
         "https://run.mocky.io/v3/b13799bf-0bf4-4a74-bf46-b7a2fb35a8c8"
+        // "dataChat.json"          //Для тестов, иногда сервер не отвечает
       );
       dispatch(fetchChat(response.data));
       dispatch(getCountMassage());
