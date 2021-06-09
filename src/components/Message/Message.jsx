@@ -22,7 +22,6 @@ const Message = ({ mesage, toggleFavorite }) => {
     }
   };
   const isAutor = JSON.parse(localStorage.getItem("User")) === user;
-  console.log(isAutor);
   return (
     <div className="row container">
       <div

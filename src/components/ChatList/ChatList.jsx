@@ -6,6 +6,7 @@ import Message from "../Message/Message";
 import { useDispatch, useSelector } from "react-redux";
 import { loadingChat } from "../../store/chat/operations";
 import { favorite } from "../../store/chat/actionCreators";
+import { getCountMassage } from "../../store/count/actionCreators";
 
 const ChatList = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const ChatList = () => {
       localStorage.setItem("User", JSON.stringify("Anonymous"));
     }
     if (messages.length) {
+      dispatch(getCountMassage());
       return localStorage.setItem("chatMessages", JSON.stringify(messages));
     }
     dispatch(loadingChat());

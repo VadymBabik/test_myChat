@@ -1,6 +1,7 @@
 import axios from "axios";
 import { fetchChat, isError, isLoading } from "./actionCreators";
 import { setLocalStorage } from "../operation";
+import { getCountMassage } from "../count/actionCreators";
 
 export const chatFetch = (payload) => {
   const updateChat = payload.map((e) => {
@@ -31,8 +32,9 @@ export const loadingChat = () => {
         "https://run.mocky.io/v3/b13799bf-0bf4-4a74-bf46-b7a2fb35a8c8"
       );
       dispatch(fetchChat(response.data));
-    } catch (e) {
-      dispatch(isError(e));
+      dispatch(getCountMassage());
+    } catch (error) {
+      dispatch(isError(error));
     }
   };
 };
