@@ -33,6 +33,13 @@
     .text {
       margin: 0;
     }
+    .inputEdit {
+      .inputText {
+        color: $white;
+        border-bottom: 1px solid $green;
+      }
+    }
+
     .favorite {
       display: flex;
       justify-content: flex-end;
