@@ -1,42 +1,73 @@
 @import "./src/them/variables";
-.message{
+.message {
   background-color: $grey;
   border-radius: 8px;
   display: flex;
-  //justify-content: space-between;
   align-items: center;
 
-  .avatar{
+  .avatar {
     margin-top: 0.75rem;
     margin-bottom: 0.75rem;
     margin-right: 10px;
     width: 70px;
     height: 70px;
   }
-  .content{
+  .content {
     width: 100%;
     display: flex;
     flex-direction: column;
-    .title{
+
+    .title {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      .user{
+      .user {
         font-weight: bold;
         color: $green;
         margin: 0;
       }
+      .data {
+        color: $darkGrey;
+      }
     }
-    .text{
+    .text {
       margin: 0;
     }
-    .favorite{
+    .favorite {
       display: flex;
       justify-content: flex-end;
       color: $green;
-      &:hover{
+      &:hover {
         cursor: pointer;
       }
+    }
+    .editMessage {
+      display: flex;
+      justify-content: flex-end;
+      i {
+        color: $grey;
+        &:hover {
+          color: $green;
+          cursor: pointer;
+        }
+      }
+      .delete {
+        &:hover {
+          color: red;
+        }
+      }
+    }
+  }
+}
+
+.message.autor {
+  background-color: $darkGrey;
+  .text {
+    color: $white;
+  }
+  .content {
+    .data {
+      color: $grey;
     }
   }
 }

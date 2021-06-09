@@ -1,6 +1,11 @@
 @import "./src/them/variables";
 
 .footer {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 0px;
+  height: 106px;
   padding-bottom: 0.1rem;
   background-color: $black;
   .link {

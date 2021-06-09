@@ -1,13 +1,13 @@
 import s from "./Header.module.scss";
-import { useEffect } from "react";
-import { getCountMassage } from "../../store/count/actionCreators";
-import { useDispatch } from "react-redux";
+// import { useEffect } from "react";
+// import { getCountMassage } from "../../store/count/actionCreators";
+// import { useDispatch } from "react-redux";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getCountMassage());
-  }, []);
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   dispatch(getCountMassage());
+  // }, []);
   return (
     <header className={`${s.header} navbar-fixed`}>
       <nav>

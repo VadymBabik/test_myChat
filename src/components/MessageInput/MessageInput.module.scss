@@ -1,0 +1,28 @@
+@import "./src/them/variables";
+.wrapper {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  bottom: 106px;
+  background-color: $grey;
+  height: 103px;
+  .content {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    margin-bottom: 0;
+    .inputWrapper {
+      border-radius: 8px;
+      background-color: $white;
+      .inputText {
+        border-bottom: inherit !important;
+        box-shadow: inherit !important;
+      }
+    }
+  }
+  .btn {
+    width: 100%;
+    background-color: $green;
+    font-weight: bold;
+  }
+}
